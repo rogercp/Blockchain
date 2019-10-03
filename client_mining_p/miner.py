@@ -43,7 +43,7 @@ if __name__ == '__main__':
             res = requests.get(node + '/last-block')
             res = json.loads(res.content)
 
-        
+            proof = search_for_proof(res['last-block'])
 
 
 
