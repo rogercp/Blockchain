@@ -48,7 +48,15 @@ if __name__ == '__main__':
             res = requests.post(node + '/mine',json ={"proof":proof})
             res_content = json.loads(res.content)
 
-            
+            if res.status_code == 200 and res_content['message'] == 'new block':
+                coins_mined +=1
+            else:
+                print(res_content['message'])
+    
+    except Exception as e:
+        print('Mining ended')
+        t1_stop = time.process_time()
+        
 
 
 
