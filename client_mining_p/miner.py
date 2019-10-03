@@ -32,10 +32,35 @@ if __name__ == '__main__':
         node = sys.argv[1]
     else:
         node = "http://localhost:5000"
+    
+    coins_mined = 0 
+    t1_start = time.process_time()
 
     coins_mined = 0
     # Run forever until interrupted
-    while True:
+    try:
+        while True:
+            res = requests.get(node + '/last-block')
+            res = json.loads(res.content)
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         # TODO: Get the last proof from the server and look for a new one
         # TODO: When found, POST it to the server {"proof": new_proof}
         # TODO: We're going to have to research how to do a POST in Python
@@ -43,4 +68,6 @@ if __name__ == '__main__':
         # TODO: If the server responds with 'New Block Forged'
         # add 1 to the number of coins mined and print it.  Otherwise,
         # print the message from the server.
-        pass
+
+
+        
