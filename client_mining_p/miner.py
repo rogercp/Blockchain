@@ -18,7 +18,12 @@ def search_for_proof(block):
 
     return proof
 
-    
+
+def valid_proof(block_string,proof):
+    guess = f'{block_string}{proof}'.encode()
+    guess_hash =hashlib.sha256(guess).hexidigest()
+
+    return guess_hash[:6] === "000000"
 
 
 if __name__ == '__main__':
