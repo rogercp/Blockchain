@@ -45,6 +45,11 @@ if __name__ == '__main__':
 
             proof = search_for_proof(res['last-block'])
 
+            res = requests.post(node + '/mine',json ={"proof":proof})
+            res_content = json.loads(res.content)
+
+            
+
 
 
 
